@@ -1,21 +1,22 @@
-var firstClockColumn = document.querySelectorAll(".firstColumn");
-var secondClockColumn = document.querySelectorAll(".secondColumn");
-var thirdClockColumn = document.querySelectorAll(".thirdColumn");
-var fourthClockColumn = document.querySelectorAll(".fourthColumn");
+const firstClockColumn = document.querySelectorAll(".first");
+const secondClockColumn = document.querySelectorAll(".second");
+const thirdClockColumn = document.querySelectorAll(".third");
+const fourthClockColumn = document.querySelectorAll(".fourth");
+const analogClock = document.querySelector(".analog-clock");
 
-var colorActive = "midnightblue";
-var colorInactive = "lightblue";
+const colorActive = "#E4FF50";
+const colorInactive = "lightblue";
 
 function changeBinaryState(timePart, column){
 	switch (timePart) {
 		case "0":
-			for(var i = 0; i < column.length; i++) {
+			for(let i = 0; i < column.length; i++) {
 				column[i].style.backgroundColor = colorInactive;
 			}
 			break;
 		case "1":
-			for (var i = 0; i < column.length; i++){
-				if(i == 3) {
+			for (let i = 0; i < column.length; i++){
+				if(i === 3) {
 					column[i].style.backgroundColor = colorActive;
 					continue;
 				}
@@ -23,8 +24,8 @@ function changeBinaryState(timePart, column){
 			}
 			break;
 		case "2":
-			for (var i = 0; i < column.length; i++){
-				if(i == 2) {
+			for (let i = 0; i < column.length; i++){
+				if(i === 2) {
 					column[i].style.backgroundColor = colorActive;
 					continue;
 				}
@@ -32,8 +33,8 @@ function changeBinaryState(timePart, column){
 			}
 			break;
 		case "3":
-			for (var i = 0; i < column.length; i++){
-				if(i == 3 || i == 2) {
+			for (let i = 0; i < column.length; i++){
+				if(i === 3 || i === 2) {
 					column[i].style.backgroundColor = colorActive;
 					continue;
 				}
@@ -41,8 +42,8 @@ function changeBinaryState(timePart, column){
 			}
 			break;
 		case "4":
-			for (var i = 0; i < column.length; i++){
-				if(i == 1) {
+			for (let i = 0; i < column.length; i++){
+				if(i === 1) {
 					column[i].style.backgroundColor = colorActive;
 					continue;
 				}
@@ -50,8 +51,8 @@ function changeBinaryState(timePart, column){
 			}
 			break;
 		case "5":
-			for (var i = 0; i < column.length; i++){
-				if(i == 1 || i  == 3) {
+			for (let i = 0; i < column.length; i++){
+				if(i === 1 || i  === 3) {
 					column[i].style.backgroundColor = colorActive;
 					continue;
 				}
@@ -59,8 +60,8 @@ function changeBinaryState(timePart, column){
 			}
 			break;
 		case "6":
-			for (var i = 0; i < column.length; i++){
-				if(i == 1 || i == 2) {
+			for (let i = 0; i < column.length; i++){
+				if(i === 1 || i === 2) {
 					column[i].style.backgroundColor = colorActive;
 					continue;
 				}
@@ -68,8 +69,8 @@ function changeBinaryState(timePart, column){
 			}
 			break;
 		case "7":
-			for (var i = 0; i < column.length; i++){
-				if(i == 1 || i == 2 || i == 3) {
+			for (let i = 0; i < column.length; i++){
+				if(i === 1 || i === 2 || i === 3) {
 					column[i].style.backgroundColor = colorActive;
 					continue;
 				}
@@ -77,8 +78,8 @@ function changeBinaryState(timePart, column){
 			}
 			break;
 		case "8":
-			for (var i = 0; i < column.length; i++){
-				if(i == 0) {
+			for (let i = 0; i < column.length; i++){
+				if(i === 0) {
 					column[i].style.backgroundColor = colorActive;
 					continue;
 				}
@@ -86,8 +87,8 @@ function changeBinaryState(timePart, column){
 			}
 			break;
 		case "9":
-			for (var i = 0; i < column.length; i++){
-				if(i == 0 || i == 3) {
+			for (let i = 0; i < column.length; i++){
+				if(i === 0 || i === 3) {
 					column[i].style.backgroundColor = colorActive;
 					continue;
 				}
@@ -98,9 +99,9 @@ function changeBinaryState(timePart, column){
 }
 
 function setBinaryTime() {
-	var time = new Date();
-	var hour = time.getHours().toString();
-	var minutes = time.getMinutes().toString();
+	const time = new Date();
+	const hour = time.getHours().toString();
+	const minutes = time.getMinutes().toString();
 
 	changeBinaryState(hour[0], firstClockColumn);
 	changeBinaryState(hour[1], secondClockColumn);
@@ -108,4 +109,13 @@ function setBinaryTime() {
 	changeBinaryState(minutes[1], fourthClockColumn);
 }
 
+function setAnalogTime(){
+	const time = new Date();
+	const hour = time.getHours().toString();
+	const minutes = time.getMinutes().toString();
+	
+	analogClock.innerHTML = `${hour} : ${minutes}`;
+}
+
 window.setInterval(setBinaryTime, 1000);
+window.setInterval(setAnalogTime, 1000);
