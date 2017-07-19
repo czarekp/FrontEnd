@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding 0;
+}
+
+body {
+    background-color: darkgray;
+}
+
+#container {
+    max-width: 1000px;
+    background-color: gray;
+    height: 100vh;
+    margin: 0 auto;
+    padding-top: 20%;
+    overflow: hidden;
+}
+
+#sampler {
+    background-color: #012;
+    width: 50vw;
+    height: 50vw;
+    margin: 0 auto;
+    max-width: 800px;
+    max-height: 800px;
+    border-radius: 5%;
+    padding: 5%;
+}
+
+#screen {
+    margin: 0 auto;
+    width: 90%;
+    height: 12%;
+    background-color: forestgreen;
+    clear: both;
+    text-align: center;
+    font-size: 30px;
+    padding: 5%;
+    font-family: 'VT323', monospace; 
+}
+
+#padboard {
+    width: 70%;
+    height: 70%;
+    margin: 8% 0;
+    overflow: hidden;
+}
+
+.pad {
+    width: 20%;
+    height: 20%;
+    background-color: darkgray;
+    display: inline-block;
+    border-radius: 5%;
+    margin: 0.5%;
+}
+
+.left {
+    margin: 8% 4% 8% 0;
+    width: 12%;
+    height: 70%;
+    float: right;
+}
+
+.right {
+    margin: 8% 2% 8% 0;
+    width: 12%;
+    height: 70%;
+    float: right;
+}
+
+.knob {
+    margin: auto;
+    background-color: gray;
+    width: 100%;
+    height: 17%;
+    border-radius: 100%;
+}
+
+.slider {
+    margin: auto;
+    margin-top: 30%;
+    background-color: white;
+    width: 30%;
+    height: 55%;
+}
+
+.value {
+    margin: auto;
+    margin-top: 30%;
+    border: 2px solid gray;
+    width: 90%;
+    height: 10%;
+    background-color: #333;
+    text-align: center;
+}
