@@ -98,16 +98,47 @@ function changeBinaryState(timePart, column) {
 	}
 }
 
+function convertHours(hour) {
+	if (hour === '24') {
+		return '00';
+	} else if (hour === '25') {
+		return '01';
+	} else {
+		return hour;
+	}
+}
+
+function convertMinutes(minutes) {
+	if (minutes === '0') {
+		return '00';
+	} else if (minutes === '1') {
+		return '01';
+	} else if (minutes === '2') {
+		return '02';
+	} else if (minutes === '3') {
+		return '03';
+	} else if (minutes === '4') {
+		return '04';
+	} else if (minutes === '5') {
+		return '05';
+	} else if (minutes === '6') {
+		return '06';
+	} else if (minutes === '7') {
+		return '07';
+	} else if (minutes === '8') {
+		return '08';
+	} else if (minutes === '9') {
+		return '09';
+	} else {
+		return minutes;
+	}
+}
+
+
 function setBinaryTime() {
 	const time = new Date();
-	let hour = (time.getUTCHours() + 2).toString();
-	const minutes = time.getUTCMinutes().toString();
-
-	if (hour === '24') {
-		hour = '00';
-	} else if (hour === '25') {
-		hour = '01';
-	}
+	let hour = convertHours((time.getUTCHours() + 2).toString());
+	let minutes = convertMinutes(time.getUTCMinutes().toString());
 
 	changeBinaryState(hour[0], firstClockColumn);
 	changeBinaryState(hour[1], secondClockColumn);
@@ -117,14 +148,8 @@ function setBinaryTime() {
 
 function setAnalogTime() {
 	const time = new Date();
-	let hour = (time.getUTCHours() + 2).toString();
-	const minutes = time.getMinutes().toString();
-
-	if (hour === '24') {
-		hour = '00';
-	} else if (hour === '25') {
-		hour = '01';
-	}
+	const hour = convertHours((time.getUTCHours() + 2).toString());
+	const minutes = time.getUTCMinutes().toString();
 
 	analogClock.innerHTML = `${hour} : ${minutes}`;
 }
