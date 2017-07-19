@@ -23,19 +23,19 @@ function getElementsLessThan100AtProperty(obj, key) {
 */
 
 function getElementsLessThan100AtProperty(obj, key) {
-  let prop = obj[key];
-  let newArray = [];
-  let isArrayEmpty = (prop === undefined || prop.length === 0);
-  let isNotAnArray = !Array.isArray(prop);
-  let noPropertyAtTheKey = !obj.hasOwnProperty(key);
-  
-  if(!(isArrayEmpty || isNotAnArray || noPropertyAtTheKey)) {
-      for(let i = 0; i < prop.length; i++){
-      if(prop[i] < 100) {
-        newArray.push(prop[i]);
-      }
-    }
-  }
-  
-  return newArray;
+	const prop = obj[key];
+	let newArray = [];
+	const isArrayEmpty = (prop === undefined || prop.length === 0);
+	const isNotAnArray = !Array.isArray(prop);
+	const noPropertyAtTheKey = !obj.hasOwnProperty(key);
+	
+	if(!(isArrayEmpty || isNotAnArray || noPropertyAtTheKey)) {
+		for(let i = 0; i < prop.length; i++){
+			if(prop[i] < 100) {
+				newArray.push(prop[i]);
+			}
+		}
+	}
+	
+	return newArray;
 }

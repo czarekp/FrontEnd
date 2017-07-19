@@ -23,11 +23,11 @@ function getElementsThatEqual10AtProperty(obj, key) {
 */
 
 function getElementsThatEqual10AtProperty(obj, key) {
-	let prop = obj[key];
+	const prop = obj[key];
 	let newArr = [];
-	let isArrayEmpty = (prop === undefined || prop.length === 0);
-	let isNotAnArray = !Array.isArray(prop);
-	let noPropertyAtTheKey = !obj.hasOwnProperty(key);
+	const isArrayEmpty = (prop === undefined || prop.length === 0);
+	const isNotAnArray = !Array.isArray(prop);
+	const noPropertyAtTheKey = !obj.hasOwnProperty(key);
 	
 	if(!(isArrayEmpty || isNotAnArray || noPropertyAtTheKey)){
 		for(let i = 0; i < prop.length; i++){
