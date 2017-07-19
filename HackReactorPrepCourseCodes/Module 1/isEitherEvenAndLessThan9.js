@@ -1,0 +1,27 @@
+/*
+Instructions:
+Write a function called "isEitherEvenAndLessThan9".
+
+Given two numbers, 'isEitherEvenAndLessThan9' returns whether at least one of them is even, and, both of them are less than 9.
+
+var output = isEitherEvenAndLessThan9(2, 4);
+console.log(output); // --> true
+
+var output = isEitherEvenAndLessThan9(72, 2);
+console.log(output); // --> false
+
+Starter Code :
+function isEitherEvenAndLessThan9(num1, num2) {
+  // your code here
+}
+*/
+
+function isEitherEvenAndLessThan9(num1, num2) {
+  let bothLessThan9 = (num1 < 9 && num2 < 9);
+  let eitherEven = (num1 % 2 === 0 || num2 % 2 === 0);
+  if(bothLessThan9 && eitherEven) {
+    return true;
+  } else  {
+    return false;
+  }
+}
