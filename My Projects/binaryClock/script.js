@@ -103,6 +103,26 @@ function convertHours(hour) {
 		return '00';
 	} else if (hour === '25') {
 		return '01';
+	} else if (hour === '0') {
+		return '00';
+	} else if (hour === '1') {
+		return '01';
+	} else if (hour === '2') {
+		return '02';
+	} else if (hour === '3') {
+		return '03';
+	} else if (hour === '4') {
+		return '04';
+	} else if (hour === '5') {
+		return '05';
+	} else if (hour === '6') {
+		return '06';
+	} else if (hour === '7') {
+		return '07';
+	} else if (hour === '8') {
+		return '08';
+	} else if (hour === '9') {
+		return '09';
 	} else {
 		return hour;
 	}
