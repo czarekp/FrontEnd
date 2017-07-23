@@ -21,12 +21,13 @@ body {
 }
 
 h1 {
+	width: 60%;
 	text-transform: uppercase;
 	color: white;
 	font-size: 3em;
 	text-align: center;
 	padding: 0.2em;
-	margin: 0.5em 6em;
+	margin: 1em auto;
 	background-color: #B22B1F;
 	text-shadow: 0.02em 0.02em 0.1em black;
 	-webkit-box-shadow: 0 0.2em 0.2em #7F1F16;
